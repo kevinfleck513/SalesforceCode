@@ -11,8 +11,11 @@ export default class RedditPost extends LightningElement {
     // this.downs = this.post.downs = null ? 0 : this.post.downs;
  }
 
-//  get downs(){
-//      return this.post.downs = undefined ? 0 : this.post.downs;
-//  }
+ get upOrDownArrow(){
+     return this.post.ups >= this.post.downs ? 'utility:arrowup' : 'utility:arrowdown';
+ }
+ get upsOrDowns(){
+     return this.post.ups >= this.post.downs ? this.post.ups : this.post.downs;
+ }
 
 }
