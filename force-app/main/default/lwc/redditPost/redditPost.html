@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-var-m-around_small thinborder">
+        <div class="slds-p-around_small">
+            <div class="heading"><strong>{post.title}</strong></div>
+            </br>
+            <div>"{post.selftext}"</div>
+            <div class="right">-<em>{post.author}</em></div>
+            <div slot="footer">
+                <!-- <div class="slds-float_right"> -->
+                    <lightning-icon icon-name="utility:arrowup" size="x-small"></lightning-icon>{post.ups} <!--<lightning-icon icon-name="utility:arrowdown" size="x-small">{post.downs}</lightning-icon>-->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>    
+</template>

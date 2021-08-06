@@ -1,0 +1,18 @@
+.thinborder{
+    background-color: darksalmon;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.heading{
+    font-size: 1rem;
+    text-align: left;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}

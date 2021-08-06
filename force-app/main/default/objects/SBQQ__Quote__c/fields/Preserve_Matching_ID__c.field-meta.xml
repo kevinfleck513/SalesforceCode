@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preserve_Matching_ID__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Preserve Matching_ID__c for related Quote Lines for cloning Custom Action / QCP.</description>
+    <externalId>false</externalId>
+    <label>Preserve Matching ID</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

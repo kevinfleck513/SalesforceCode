@@ -1,0 +1,49 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:lightningQuickActionWithoutHeader" controller="UserAssignmentController">
+<aura:attribute name="orderItemData" type="OrderItem[]"/>
+<aura:attribute name="loaded" type="Boolean" default="false"/>
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- <aura:if isTrue="{!v.loaded}"> -->
+        <header class="slds-modal__header">
+            <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">User Assignment</h2>
+            </header>
+                <div class="border slds-scrollable_x">
+                    <table class="slds-table_cell-buffer">
+                        <!-- <thead>
+                            <tr class = "slds-text-title_caps">
+                                <th scope = "col"><div class = "slds-truncate" title = "Product">Product</div></th>                    
+                            </tr>
+                        </thead> -->
+                        <tbody>
+                            <aura:iteration items="{!v.orderItemData}" var="oi">
+                                <tr>
+                                    <td>
+                                        <c:userAssignmentCustomLookup onconnectedCallback="{!c.componentLoaded}" recordId="{!oi.Id}"></c:userAssignmentCustomLookup>
+                                    </td>
+                                    <td>
+                                        <span class="slds-truncate" title="{!oi.Product2.Name}">
+                                            <lightning:icon iconName="standard:order_item" alternativeText="OrderItem" title="OrderItem" size="small"/>
+                                            <lightning:formattedText class="slds-var-m-left_xx-small" value="{!oi.Product2.Name}"/>
+                                        </span>
+                                    </td>
+                                    <!-- <td>
+                                        <lightning:formattedText value="{!oi.Id}"/>
+                                    </td> -->
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            <!-- </div> -->
+            <footer class="slds-modal__footer">
+                <lightning:button class="slds-button slds-button_neutral" onclick="{!c.closeQuickAction}">Cancel</lightning:button>
+                <lightning:button class="slds-button slds-button_brand">Save</lightning:button>
+            </footer>        
+        <!-- <aura:set attribute="else">
+            <div class="exampleHolder">
+                <lightning:spinner alternativeText="Loading" size="medium" />
+            </div>
+        </aura:set>
+    </aura:if> -->
+  
+</aura:component>
