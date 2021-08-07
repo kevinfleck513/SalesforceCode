@@ -1,8 +1,8 @@
 <template>
-    <lightning-card title="Top Reddit posts r/SalesforceDeveloper">
-        <div class="slds-var-p-around_small">
+    <lightning-card title="&#128293; Hot Reddit posts r/SalesforceDeveloper">
+        <div class="slds-var-p-around_small" style="height: 500px">
             <div class="grey">
-                <div class="slds-text-align_center">
+                <div class="slds-scrollable_y slds-text-align_center" style="height: 440px">
                     <template if:true={redditResults}>
                         <template for:each={redditResults} for:item="child">
                             <lightning-layout-item key={child.data}>

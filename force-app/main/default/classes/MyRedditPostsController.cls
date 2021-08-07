@@ -1,6 +1,7 @@
 public with sharing class MyRedditPostsController {
     // private static final String REDDIT_URL = 'http://www.reddit.com/r/SalesforceDeveloper/comments/ocq49l/whats_everybody_making.json';
-    private static final String REDDIT_URL = 'https://www.reddit.com/r/SalesforceDeveloper/top.json';
+    private static final String REDDIT_URL = 'https://www.reddit.com/r/SalesforceDeveloper/hot.json';
+    // private static final String REDDIT_URL = 'https://www.reddit.com/r/SalesforceDeveloper/top.json';
     private static final String GET = 'GET';
 
     public MyRedditPostsController() {
