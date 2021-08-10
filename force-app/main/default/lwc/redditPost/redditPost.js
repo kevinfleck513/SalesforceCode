@@ -7,6 +7,7 @@ export default class RedditPost extends LightningElement {
  connectedCallback(){
     console.log('connectedCallback() redditPost.js');
     console.log('post: ' + JSON.stringify(this.post));
+    console.table(this.post);
  }
 
  get upOrDownArrow(){
