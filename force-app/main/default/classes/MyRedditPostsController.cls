@@ -3,7 +3,7 @@ public with sharing class MyRedditPostsController {
 
     @AuraEnabled(cacheable=true)
     public static List<Reddit_Type__c> getRedditChannels(){
-        return [SELECT Id, Name FROM Reddit_Type__c];
+        return [SELECT Id, Name FROM Reddit_Type__c ORDER BY Name ASC];
     }
 
     @AuraEnabled()
