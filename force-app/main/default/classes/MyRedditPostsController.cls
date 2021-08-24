@@ -1,15 +1,17 @@
 public with sharing class MyRedditPostsController {
-    // private static final String REDDIT_URL = 'http://www.reddit.com/r/SalesforceDeveloper/comments/ocq49l/whats_everybody_making.json';
-    private static final String REDDIT_URL = 'https://www.reddit.com/r/SalesforceDeveloper/hot.json';
-    // private static final String REDDIT_URL = 'https://www.reddit.com/r/SalesforceDeveloper/top.json';
     private static final String GET = 'GET';
 
-    public MyRedditPostsController() {
-        System.debug('Hi, We\'re calling Reddit');
+    @AuraEnabled(cacheable=true)
+    public static List<Reddit_Type__c> getRedditChannels(){
+        return [SELECT Id, Name FROM Reddit_Type__c];
     }
 
-    @AuraEnabled(cacheable=true)
-    public static List<RedditWrapper.Children> getRedditData(){
+    @AuraEnabled()
+    public static List<RedditWrapper.Children> getRedditData(String channel){
+
+        System.debug('channel: ' + channel);
+        String REDDIT_URL = 'https://www.reddit.com/r/'+channel+'/hot.json';
+        System.debug('REDDIT_URL: ' + REDDIT_URL);
 
         List<RedditWrapper.Data> redditData = new List<RedditWrapper.Data>();
 

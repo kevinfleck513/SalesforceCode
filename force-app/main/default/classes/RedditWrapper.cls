@@ -32,7 +32,49 @@ public class RedditWrapper {
 
         @AuraEnabled
         public String author;
+
+        @AuraEnabled
+        public Preview preview;
+
+        @AuraEnabled
+        public String url;
+
+        @AuraEnabled
+        public Boolean is_video;
         
+	}
+
+    public class Preview {
+        @AuraEnabled
+		public List<Images> images;
+
+        @AuraEnabled
+		public Boolean enabled;
+	}
+
+    public class Images {
+        @AuraEnabled
+		public Source source;
+
+        @AuraEnabled
+		public List<Source> resolutions;
+
+        // @AuraEnabled
+		// public Media_embed variants;
+
+        @AuraEnabled
+		public String id;
+	}
+
+    public class Source {
+        @AuraEnabled
+		public String url;
+
+        @AuraEnabled
+		public Integer width;
+
+        @AuraEnabled
+		public Integer height;
 	}
 	
 	public static RedditWrapper parse(String json) {

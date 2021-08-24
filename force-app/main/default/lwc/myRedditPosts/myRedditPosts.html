@@ -1,5 +1,12 @@
 <template>
-    <lightning-card title="&#128293; Hot Reddit posts r/SalesforceDeveloper">
+    <lightning-card title="&#128293; Hot Reddit posts">        
+        <div class="slds-var-p-horizontal_small slds-align_absolute-center">
+            <lightning-combobox class="slds-align-middle" value={selectedChannel} options={redditChannels} onchange={handleChannelChange}></lightning-combobox>
+        </div>
+        <br/>
+        <div class="slds-var-p-horizontal_small slds-align_absolute-center">
+            {title}
+        </div>       
         <div class="slds-var-p-around_small" style="height: 500px">
             <div class="grey">
                 <div class="slds-scrollable_y slds-text-align_center" style="height: 440px">

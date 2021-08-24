@@ -6,7 +6,11 @@
             <!-- </br> -->
         <div class="topborder body slds-var-p-around_small">
             <div>
-                <div>"{post.selftext}"</div>
+                <template if:false={isVideo}>
+                    <div><img src={image} onerror={onImgError}></div>
+                </template>                
+                <!-- <div>{isVideo}</div> -->
+                <div>{post.selftext}</div>
                 <div class="right">-<em>{post.author}</em></div>
                 <div slot="footer">
                     <div>
