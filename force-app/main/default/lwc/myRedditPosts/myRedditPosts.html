@@ -14,10 +14,13 @@
                         <lightning-spinner alternative-text="Loading..."></lightning-spinner>
                     </template>
                     <template if:true={isLoaded}>
-                        <template for:each={redditResults} for:item="child">
+                        <template if:false={error} for:each={redditResults} for:item="child">
                             <lightning-layout-item key={child.data}>
                                 <c-reddit-post post={child.data}></c-reddit-post>
                             </lightning-layout-item>
+                        </template>
+                        <template if:true={error}>
+                            error getting data
                         </template>
                     </template>
                 </div>                                       

@@ -7,6 +7,7 @@ export default class MyRedditPosts extends LightningElement {
     @api recordId;
     redditChannels;
     redditResults;
+    error;
     title;
     isLoaded = false;
 
@@ -48,11 +49,14 @@ export default class MyRedditPosts extends LightningElement {
                 console.log('reddit results: ' + JSON.stringify(result));
                 this.redditResults = result;
                 this.isLoaded = true;
+                this.error = false;
             } else {
                 console.log('no results');
             }
         }).catch(error=>{
-            console.log('error: ' + error)
+            console.log('error: ' + JSON.stringify(error));
+            this.isLoaded = true;
+            this.error = true;
         });
     }
 
